@@ -1,0 +1,153 @@
+# Quick script to generate the JSON dataset for the dashboard
+import json
+
+players = [
+    # BATTERS
+    {
+        "id": 6488, "rank": 1, "name": "Harvik Desai", "category": "Batsman", "role": "Wicketkeeper-Batter",
+        "age": 25, "team": "Saurashtra", "tier": "Tier 1", "base_price": "20L", "max_bid": "60L",
+        "pressure_sr": 152.36, "primary_metric": "323 runs in SMAT", "secondary_metric": "0.12 byes/inn (9 dismissals)",
+        "ground_fit": "SMS Jaipur: Gap manipulation across 78m boundaries; 1s into 2s.",
+        "scout_note": "Attacked R. Sai Kishore for 24 runs in 5 balls. Direct wicketkeeping backup to Dhruv Jurel."
+    },
+    {
+        "id": 7049, "rank": 2, "name": "Kamil Mishara", "category": "Batsman", "role": "Pure Top-Order Striker",
+        "age": 23, "team": "Sri Lanka A", "tier": "Tier 1", "base_price": "20L", "max_bid": "40L",
+        "pressure_sr": 205.71, "primary_metric": "72 runs off 35 press balls", "secondary_metric": "28.57% boundary rate",
+        "ground_fit": "Barsapara Guwahati: High wrist-cock lofts skiddy ball under heavy evening dew.",
+        "scout_note": "Solves RR's #10 death boundary ranking (19.53%). High-velocity boundary hitter."
+    },
+    {
+        "id": 48551, "rank": 3, "name": "Aravelly Avanish", "category": "Batsman", "role": "Wicketkeeper-Finisher",
+        "age": 19, "team": "Hyderabad / India U19", "tier": "Tier 2", "base_price": "20L", "max_bid": "25L",
+        "pressure_sr": 162.50, "primary_metric": "162.50 death SR in BCCI trials", "secondary_metric": "96.4% U19 WC catch rate",
+        "ground_fit": "SMS Jaipur & Away: Left-hand muscle against finger spin; cleans up hard chances.",
+        "scout_note": "India U19 WC Finalist. Early-buy developmental keeper to groom behind Jurel."
+    },
+    {
+        "id": 3651, "rank": 4, "name": "Ricky Bhui", "category": "Batsman", "role": "Middle-Order Power Hitter",
+        "age": 28, "team": "Andhra", "tier": "Tier 1", "base_price": "30L", "max_bid": "55L",
+        "pressure_sr": 188.89, "primary_metric": "20 sixes in SMAT (#1)", "secondary_metric": "902 Ranji runs (75.16 avg)",
+        "ground_fit": "SMS Jaipur & Two-Paced Decks: Hits high pace through line without slogging.",
+        "scout_note": "Age 28 prime anchor exception. Provides mature domestic captaincy ballast to prevent collapses."
+    },
+    {
+        "id": 8652, "rank": 5, "name": "Mohammad Ishaq", "category": "Batsman", "role": "Wicketkeeper-Finisher",
+        "age": 20, "team": "Afghanistan A", "tier": "Tier 2", "base_price": "20L", "max_bid": "25L",
+        "pressure_sr": 148.00, "primary_metric": "37 runs off 25 press balls", "secondary_metric": "0 dismissals under pressure",
+        "ground_fit": "SMS Jaipur: Compact technique; handles dry surface deceleration.",
+        "scout_note": "High-upside overseas developmental keeper at base price (INR 20L)."
+    },
+    {
+        "id": 8085, "rank": 6, "name": "Suyash Prabhudessai", "category": "Batsman", "role": "Finisher & Gun Outfielder",
+        "age": 26, "team": "Goa", "tier": "Tier 2", "base_price": "20L", "max_bid": "35L",
+        "pressure_sr": 148.60, "primary_metric": "38.40 SMAT avg", "secondary_metric": "Saves 8-10 runs in field",
+        "ground_fit": "SMS Jaipur: Rapid 2s across deep pockets; boundary suppression in 30-yard ring.",
+        "scout_note": "Age 26 transition exception. Elite domestic athlete offering positional versatility at 6 or 7."
+    },
+    {
+        "id": 26854, "rank": 7, "name": "SM Meherob Hasan", "category": "Batsman", "role": "Batting All-Rounder",
+        "age": 21, "team": "Bangladesh A", "tier": "Tier 2", "base_price": "20L", "max_bid": "25L",
+        "pressure_sr": 168.29, "primary_metric": "69 runs off 41 press balls", "secondary_metric": "7 sixes + off-spin utility",
+        "ground_fit": "SMS Jaipur: Left-handed lower-order power; defensive off-spin on abrasive clay.",
+        "scout_note": "Dual-threat all-rounder giving batting depth at #7 with secondary spin overs."
+    },
+    {
+        "id": 27962, "rank": 8, "name": "Saurav Chauhan", "category": "Batsman", "role": "Pure Top-Order Attacker",
+        "age": 23, "team": "Gujarat", "tier": "Tier 3", "base_price": "20L", "max_bid": "20L",
+        "pressure_sr": 113.33, "primary_metric": "18-ball 61 in SMAT (338 SR)", "secondary_metric": "16 balls in senior log",
+        "ground_fit": "Barsapara Guwahati: Aggressive powerplay intent hitting through the line.",
+        "scout_note": "Domestic record-holder for fastest fifty. Fearless backup opener to Yashasvi Jaiswal."
+    },
+    {
+        "id": 7548, "rank": 9, "name": "Shivalik Sharma", "category": "Batsman", "role": "Middle-Order Left-Hand Batter",
+        "age": 25, "team": "Baroda", "tier": "Tier 3", "base_price": "20L", "max_bid": "25L",
+        "pressure_sr": 141.50, "primary_metric": "141.50 SR vs spin in SMAT", "secondary_metric": "Tall lever boundary archetype",
+        "ground_fit": "SMS Jaipur: Clears long midwicket boundary off spinners from the rough.",
+        "scout_note": "Adds left-handed boundary muscle alongside Dhruv Jurel during middle overs."
+    },
+    {
+        "id": 8726, "rank": 10, "name": "Alishan Sharafu", "category": "Batsman", "role": "Pure Top/Middle Striker",
+        "age": 22, "team": "UAE", "tier": "Tier 3", "base_price": "20L", "max_bid": "20L",
+        "pressure_sr": 156.14, "primary_metric": "89 runs off 57 press balls", "secondary_metric": "12 boundaries (21.05%)",
+        "ground_fit": "Barsapara Guwahati: Skiddy hard-length puncher; swift outfielder.",
+        "scout_note": "Associate prodigy capable of floating across batting positions 3 to 6."
+    },
+
+    # BOWLERS
+    {
+        "id": 8632, "rank": 1, "name": "Aaqib Khan", "category": "Bowler", "role": "Express Seam Spearhead",
+        "age": 20, "team": "UP / India A", "tier": "Tier 1", "base_price": "20L", "max_bid": "75L",
+        "pressure_sr": 14.20, "primary_metric": "5.10 PP pressure economy", "secondary_metric": "60.0% PP dot ball rate",
+        "ground_fit": "Barsapara Guwahati & SMS Jaipur: 142+ km/h hit-the-deck pace; dismisses top order.",
+        "scout_note": "Dismissed Mayank Agarwal in Ranji Trophy. Matches 12-crore quicks in early-over dot frequency."
+    },
+    {
+        "id": 8298, "rank": 2, "name": "Ramon Simmonds", "category": "Bowler", "role": "Left-Arm Death Seamer",
+        "age": 23, "team": "West Indies", "tier": "Tier 1", "base_price": "20L", "max_bid": "40L",
+        "pressure_sr": 5.00, "primary_metric": "5.04 death economy (5 wkts)", "secondary_metric": "4.00% boundaries conceded (1 in 25)",
+        "ground_fit": "Barsapara Guwahati: Wide-line yorkers; natural left-arm angle under wet dew.",
+        "scout_note": "Halts RR's 9.66 death bleeding. Allowed only ONE boundary across 25 high-pressure balls."
+    },
+    {
+        "id": 22471, "rank": 3, "name": "Matthew Humphreys", "category": "Bowler", "role": "Slow Left-Arm Orthodox Spinner",
+        "age": 22, "team": "Ireland", "tier": "Tier 2", "base_price": "20L", "max_bid": "30L",
+        "pressure_sr": 5.75, "primary_metric": "12 wickets in 69 press balls", "secondary_metric": "5.57 pressure economy",
+        "ground_fit": "SMS Jaipur: Exploits dry clay to turn into right-handers; protects 78m boundaries.",
+        "scout_note": "Supreme defensive spinner. Stifles middle overs at 5.57 RPO while taking regular wickets."
+    },
+    {
+        "id": 31227, "rank": 4, "name": "Vidhwath Kaverappa", "category": "Bowler", "role": "Upright Seam Spearhead",
+        "age": 25, "team": "Karnataka", "tier": "Tier 1", "base_price": "30L", "max_bid": "50L",
+        "pressure_sr": 16.50, "primary_metric": "Premier domestic strike bowler", "secondary_metric": "54.20% dot ball rate",
+        "ground_fit": "Hostile Away Decks (Ekana/Ahmedabad): Immaculate upright seam and steep bounce.",
+        "scout_note": "Duleep Trophy MoM. High-discipline domestic spearhead suited for unresponsive pitches."
+    },
+    {
+        "id": 24473, "rank": 5, "name": "Sonny Baker", "category": "Bowler", "role": "145 km/h Express Quick",
+        "age": 21, "team": "England", "tier": "Tier 2", "base_price": "20L", "max_bid": "35L",
+        "pressure_sr": 18.00, "primary_metric": "145+ km/h release speed", "secondary_metric": "11.11% boundaries conceded",
+        "ground_fit": "Barsapara Guwahati: Heavy bouncers hurry batters through the air before dew settles.",
+        "scout_note": "Raw velocity early buy. Bowling Impact Player weapon for night fixtures."
+    },
+    {
+        "id": 27959, "rank": 6, "name": "Hrithik Shokeen", "category": "Bowler", "role": "Off-Spin Bowling All-Rounder",
+        "age": 24, "team": "Delhi / India A", "tier": "Tier 2", "base_price": "30L", "max_bid": "35L",
+        "pressure_sr": 21.00, "primary_metric": "6.40 SMAT economy (Delhi)", "secondary_metric": "100% Unsold / Free Agent",
+        "ground_fit": "SMS Jaipur: Right-arm off-spin takes ball away from LHBs; adds lower batting punch.",
+        "scout_note": "Unsold in IPL mega auction. Free domestic off-spin asset at base price."
+    },
+    {
+        "id": 49665, "rank": 7, "name": "Prince Choudhary", "category": "Bowler", "role": "Pure Mystery Wrist-Spinner",
+        "age": 21, "team": "Delhi", "tier": "Tier 3", "base_price": "20L", "max_bid": "25L",
+        "pressure_sr": 15.00, "primary_metric": "12 wkts at 6.15 ER (DDCA)", "secondary_metric": "Sharp disguised googly",
+        "ground_fit": "SMS Jaipur: Turns both ways off abrasive red clay.",
+        "scout_note": "Direct replication of Season 1 Vignesh Puthur archetype: unheralded mystery spin phenom."
+    },
+    {
+        "id": 27466, "rank": 8, "name": "Dhruv Parashar", "category": "Bowler", "role": "Off-Spin Bowling All-Rounder",
+        "age": 19, "team": "UAE", "tier": "Tier 3", "base_price": "20L", "max_bid": "20L",
+        "pressure_sr": 28.00, "primary_metric": "5.57 pressure economy", "secondary_metric": "10.71% boundary conceded",
+        "ground_fit": "SMS Jaipur: Darting trajectory into pads denies elevation.",
+        "scout_note": "19-year-old rising off-spinner with defensive discipline under match pressure."
+    },
+    {
+        "id": 6932, "rank": 9, "name": "Pramod Madushan", "category": "Bowler", "role": "Death Yorker Specialist",
+        "age": 31, "team": "Sri Lanka", "tier": "Tier 3", "base_price": "20L", "max_bid": "25L",
+        "pressure_sr": 6.25, "primary_metric": "4 wkts in 25 press balls (5.28 ER)", "secondary_metric": "4.00% boundaries conceded",
+        "ground_fit": "Barsapara Guwahati: Reverse swing and low toe-crushers under wet ball conditions.",
+        "scout_note": "Age 31 veteran insurance exception. Asia Cup final winner with proven death execution."
+    },
+    {
+        "id": 2852, "rank": 10, "name": "Jagadeesha Suchith", "category": "Bowler", "role": "Left-Arm Orthodox Spinner",
+        "age": 31, "team": "Karnataka", "tier": "Tier 3", "base_price": "20L", "max_bid": "20L",
+        "pressure_sr": 38.00, "primary_metric": "2.53 middle pressure econ", "secondary_metric": "68.42% dots, 0 boundaries",
+        "ground_fit": "SMS Jaipur: Supreme containment bowler on dry decks; strangles overs 7-11.",
+        "scout_note": "Age 31 domestic veteran safety net at base price (INR 20L). Zero boundary leakage."
+    }
+]
+
+with open(r'D:\HACKATHONS\SupeRR_Selector_Season_2\players.json', 'w') as f:
+    json.dump(players, f, indent=2)
+
+print("Generated players.json with", len(players), "players.")
