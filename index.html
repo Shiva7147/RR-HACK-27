@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Royals — SupeRR Selector Season 2 | War-Room Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-canvas: #f8f9fa;
+    --bg-window: #ffffff;
+    --text-black: #0c0a09;
+    --text-heading: #18181b;
+    --text-body: #52525b;
+    --text-muted: #71717a;
+    --border-subtle: #f1f1f4;
+    --border-card: #e4e4e7;
+    --rr-pink: #ea1b65;
+    --rr-pink-subtle: #fdf2f8;
+    --rr-pink-border: #fbcfe8;
+    --rr-navy: #001e50;
+    --rr-navy-light: #0a2560;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f1f2f6;
+    background-image: 
+      radial-gradient(circle at 50% 0%, #ffffff 0%, #edf0f5 100%);
+    color: var(--text-heading);
+    line-height: 1.5;
+    font-size: 13.5px;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 24px 16px 64px 16px;
+  }
+
+  /* VIEWPORT WINDOW WITH AMBIENT BACKLIGHT AURA (FAITHFUL TO MINDLY REFERENCE) */
+  .viewport-window {
+    max-width: 1240px;
+    margin: 0 auto;
+    background: var(--bg-window);
+    border-radius: 28px;
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.9),
+      0 0 70px 0 rgba(0, 30, 80, 0.10),
+      0 0 90px 4px rgba(234, 27, 101, 0.08),
+      0 24px 64px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(228, 228, 231, 0.85);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* TOP NAVIGATION (EXACT MINDLY PILL GROUP LAYOUT) */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 36px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    color: var(--rr-navy);
+    text-decoration: none;
+  }
+
+  .nav-brand-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rr-pink);
+  }
+
+  .nav-pill-group {
+    display: flex;
+    align-items: center;
+    background: #f4f4f5;
+    border-radius: 9999px;
+    padding: 4px;
+    gap: 2px;
+  }
+
+  .nav-pill-item {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-body);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .nav-pill-item:hover {
+    color: var(--text-black);
+  }
+
+  .nav-pill-item.active {
+    background: #ffffff;
+    color: var(--text-black);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--text-black);
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .nav-cta-btn:hover {
+    background: #27272a;
+    transform: translateY(-1px);
+  }
+
+  /* HERO CANVAS (MATCHING MINDLY HEADLINE + ARC CENTERPIECE) */
+  .hero-canvas {
+    padding: 56px 40px 48px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ROTATING CIRCULAR STAMP (MATCHING TOP RIGHT CORNER IN REFERENCE) */
+  .circular-stamp {
+    position: absolute;
+    top: 48px;
+    right: 56px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .circular-stamp svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateStamp 24s linear infinite;
+  }
+
+  @keyframes rotateStamp {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .circular-stamp-center {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rr-pink);
+  }
+
+  .hero-badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    background: var(--rr-pink-subtle);
+    border: 1px solid var(--rr-pink-border);
+    color: var(--rr-pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* HIGH-EDITORIAL SERIF HEADLINE (FAITHFUL TO MINDLY IMAGE) */
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--text-black);
+    max-width: 840px;
+    margin: 0 auto 16px auto;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rr-navy);
+  }
+
+  .hero-subhead {
+    font-size: 14.5px;
+    color: var(--text-body);
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0 auto 28px auto;
+  }
+
+  /* BUTTONS PAIRING */
+  .hero-actions-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 52px;
+  }
+
+  .btn-primary-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--text-black);
+    color: #ffffff;
+    padding: 12px 26px;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-primary-dark:hover {
+    background: #27272a;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: var(--text-heading);
+    border: 1px solid var(--border-card);
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary-light:hover {
+    background: #f4f4f5;
+  }
+
+  /* 3D FLOATING CENTERPIECE STAGE (MATCHING MINDLY ARC PERSPECTIVE) */
+  .centerpiece-stage {
+    width: 100%;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 0 40px 0;
+  }
+
+  /* SVG HAIRLINE CONNECTOR WIRES */
+  .wire-svg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* FLOATING CALLOUT CARDS (LEFT AND RIGHT) */
+  .floating-callout-left {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 230px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
+    z-index: 10;
+  }
+
+  .floating-callout-right {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 230px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
+    z-index: 10;
+  }
+
+  .callout-icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: #f4f4f5;
+    color: var(--rr-navy);
+    margin-bottom: 12px;
+  }
+
+  .callout-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .callout-desc {
+    font-size: 11.5px;
+    color: var(--text-body);
+    line-height: 1.5;
+  }
+
+  /* ARC CARDS CONTAINER IN PERSPECTIVE */
+  .arc-perspective-wrap {
+    perspective: 1000px;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+  }
+
+  .arc-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: center;
+  }
+
+  .frosted-arc-card {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(228, 228, 231, 0.9);
+    border-radius: 20px;
+    padding: 22px 18px;
+    text-align: left;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04), inset 0 1px 1px #ffffff;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+
+  /* 3D TILT EFFECT REPRODUCING THE REFERENCE ARC */
+  .arc-card-left {
+    transform: rotateY(6deg) rotateZ(-2deg) translateY(8px);
+  }
+
+  .arc-card-center {
+    transform: translateY(-8px) scale(1.03);
+    border-color: rgba(0, 30, 80, 0.2);
+    box-shadow: 0 24px 50px rgba(0, 30, 80, 0.08), inset 0 1px 2px #ffffff;
+    z-index: 6;
+  }
+
+  .arc-card-right {
+    transform: rotateY(-6deg) rotateZ(2deg) translateY(8px);
+  }
+
+  .frosted-arc-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    background: #ffffff;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+    border-color: var(--rr-pink);
+    z-index: 8;
+  }
+
+  .arc-card-rank {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--rr-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+  }
+
+  .arc-card-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-black);
+    margin-bottom: 2px;
+  }
+
+  .arc-card-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .arc-metric-val {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--rr-navy);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 4px;
+  }
+
+  .arc-card-note {
+    font-size: 11px;
+    color: var(--text-body);
+    line-height: 1.45;
+  }
+
+  /* LOWER PROOF & STATS STRIP */
+  .social-proof-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1060px;
+    margin: 40px auto 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .proof-bold {
+    font-weight: 700;
+    color: var(--text-black);
+  }
+
+  .proof-star {
+    color: var(--rr-pink);
+    font-size: 12px;
+  }
+
+  /* CONTENT MODULES CONTAINER */
+  .modules-container {
+    padding: 24px 40px 64px 40px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .section-intro {
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-black);
+    margin-bottom: 6px;
+  }
+
+  .section-desc {
+    font-size: 13.5px;
+    color: var(--text-body);
+    max-width: 720px;
+  }
+
+  /* CONTROLS BAR (SEARCH & PILL FILTERS) */
+  .controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .filter-pills-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .pill-filter-btn {
+    background: #f4f4f5;
+    border: 1px solid transparent;
+    padding: 7px 16px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-body);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .pill-filter-btn:hover {
+    color: var(--text-black);
+    background: #ebebed;
+  }
+
+  .pill-filter-btn.active {
+    background: var(--text-black);
+    color: #ffffff;
+  }
+
+  .search-input-pill {
+    padding: 8px 18px;
+    border-radius: 9999px;
+    border: 1px solid var(--border-card);
+    background: #ffffff;
+    font-size: 12.5px;
+    color: var(--text-heading);
+    outline: none;
+    min-width: 260px;
+    transition: all 0.15s ease;
+  }
+
+  .search-input-pill:focus {
+    border-color: var(--rr-navy);
+    box-shadow: 0 0 0 3px rgba(0, 30, 80, 0.06);
+  }
+
+  /* 20-PLAYER GRID */
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 16px;
+  }
+
+  .player-card-refined {
+    background: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .player-card-refined:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  }
+
+  .player-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .card-role-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--rr-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .card-name-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text-black);
+  }
+
+  .card-origin-meta {
+    font-size: 11.5px;
+    color: var(--text-muted);
+  }
+
+  .tier-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    background: #f4f4f5;
+    color: var(--text-body);
+    white-space: nowrap;
+  }
+
+  .card-stat-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #fbfbfc;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    margin: 14px 0;
+  }
+
+  .stat-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+
+  .stat-val {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-black);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .card-intel-block {
+    font-size: 11.5px;
+    color: var(--text-body);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 12px;
+    margin-top: 8px;
+  }
+
+  .card-intel-block strong {
+    color: var(--text-black);
+    font-weight: 600;
+  }
+
+  .card-foot-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* TABLE BOX FOR 11 LOSSES */
+  .table-box {
+    background: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 18px;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12.5px;
+  }
+
+  th {
+    background: #fafafa;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-card);
+  }
+
+  td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-heading);
+    vertical-align: middle;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: #fbfbfc;
+  }
+
+  /* METHODOLOGY TILES */
+  .methodology-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .methodology-tile {
+    background: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 18px;
+    padding: 22px;
+  }
+
+  .methodology-tile-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--rr-navy);
+    margin-bottom: 8px;
+  }
+
+  .methodology-tile p {
+    font-size: 12px;
+    color: var(--text-body);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+
+  .code-formula {
+    background: #f4f4f5;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 11px;
+    color: var(--text-black);
+    margin: 8px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    background: #ffffff;
+  }
+
+  @media (max-width: 900px) {
+    .floating-callout-left, .floating-callout-right, .wire-svg-canvas, .circular-stamp {
+      display: none;
+    }
+    .arc-cards-row {
+      grid-template-columns: 1fr;
+    }
+    .arc-card-left, .arc-card-center, .arc-card-right {
+      transform: none;
+    }
+    .hero-title {
+      font-size: 42px;
+    }
+    nav {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- VIEWPORT WINDOW CONTAINER WITH AMBIENT BACKLIGHT AURA -->
+  <div class="viewport-window">
+
+    <!-- TOP NAVIGATION -->
+    <nav>
+      <a href="#" class="nav-brand">
+        <span>Rajasthan Royals</span>
+        <span class="nav-brand-dot"></span>
+      </a>
+
+      <div class="nav-pill-group">
+        <a href="#board" class="nav-pill-item active" onclick="switchNav(this)">Targets</a>
+        <a href="#losses" class="nav-pill-item" onclick="switchNav(this)">11 Losses</a>
+        <a href="#methodology" class="nav-pill-item" onclick="switchNav(this)">Methodology</a>
+        <a href="#factors" class="nav-pill-item" onclick="switchNav(this)">Screening</a>
+        <a href="Rajasthan_Royals_IPL_2027_Auction_Strategy.pdf" target="_blank" class="nav-pill-item">10-Page PDF ↗</a>
+      </div>
+
+      <a href="#board" class="nav-cta-btn">
+        <span>Scouting Board</span>
+        <span>→</span>
+      </a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-canvas">
+
+      <!-- ROTATING CIRCULAR STAMP (MATCHING TOP RIGHT ELEMENT IN REFERENCE) -->
+      <div class="circular-stamp">
+        <svg viewBox="0 0 100 100">
+          <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+          <text font-size="9" fill="#71717a" letter-spacing="2">
+            <textPath href="#circlePath" startOffset="0%">
+              RAJASTHAN ROYALS · ANALYTICS 2027 ·
+            </textPath>
+          </text>
+        </svg>
+        <div class="circular-stamp-center">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-badge-tag">
+        SupeRR Selector Season 2 · IPL 2027 Strategy
+      </div>
+
+      <h1 class="hero-title">
+        A sharper fortress for the <em>championship</em>.
+      </h1>
+
+      <p class="hero-subhead">
+        Audited across 80,498 match deliveries. 20 uncapped free-agent prodigies screened to eliminate the Jaipur home paradox and solve death-overs execution.
+      </p>
+
+      <div class="hero-actions-row">
+        <a href="#board" class="btn-primary-dark">
+          <span>Explore 20 Targets</span>
+          <span>→</span>
+        </a>
+        <a href="#losses" class="btn-secondary-light">
+          <span>Review 11 Razor Losses</span>
+        </a>
+      </div>
+
+      <!-- CENTERPIECE STAGE (WITH 3D FLOATING ARC CARDS & SVG WIRE CONNECTORS) -->
+      <div class="centerpiece-stage">
+        
+        <!-- SVG CONNECTOR WIRES -->
+        <svg class="wire-svg-canvas" viewBox="0 0 1100 320" fill="none">
+          <!-- Left callout to center arc left card -->
+          <path d="M 240 110 C 310 110, 310 130, 360 130" stroke="#d4d4d8" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="360" cy="130" r="3" fill="#ea1b65"/>
+          <circle cx="240" cy="110" r="3" fill="#001e50"/>
+
+          <!-- Right callout to center arc right card -->
+          <path d="M 860 130 C 790 130, 790 140, 740 140" stroke="#d4d4d8" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="740" cy="140" r="3" fill="#ea1b65"/>
+          <circle cx="860" cy="130" r="3" fill="#001e50"/>
+        </svg>
+
+        <!-- LEFT CALLOUT -->
+        <div class="floating-callout-left">
+          <div class="callout-icon-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="callout-title">The Home Fortress Paradox</div>
+          <div class="callout-desc">RR achieved 55.0% away wins (22/40), but plummeted to 45.9% at home (17/37). Championship qualification requires a 70% home fortress.</div>
+        </div>
+
+        <!-- RIGHT CALLOUT -->
+        <div class="floating-callout-right">
+          <div class="callout-icon-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="22" y1="12" x2="18" y2="12"/>
+              <line x1="6" y1="12" x2="2" y2="12"/>
+              <line x1="12" y1="6" x2="12" y2="2"/>
+              <line x1="12" y1="22" x2="12" y2="18"/>
+            </svg>
+          </div>
+          <div class="callout-title">Death Overs Breakdown</div>
+          <div class="callout-desc">Ranked #10 dead last in death boundary frequency (19.5%). Death bowling conceded 11.40 RPO under Guwahati evening dew.</div>
+        </div>
+
+        <!-- 3D FLOATING ARC CARDS ROW -->
+        <div class="arc-perspective-wrap">
+          <div class="arc-cards-row">
+            
+            <!-- ARC CARD 1 -->
+            <div class="frosted-arc-card arc-card-left">
+              <div class="arc-card-rank">Rank 1 Bowler</div>
+              <div class="arc-card-name">Aaqib Khan</div>
+              <div class="arc-card-sub">Age: 20 · UP / India A · 142+ km/h</div>
+              <div class="arc-metric-val">5.10 PP Economy (60% Dots)</div>
+              <div class="arc-card-note">Tearaway pacer who dismissed Mayank Agarwal in Ranji Trophy; matches elite quicks in early dot frequency.</div>
+            </div>
+
+            <!-- ARC CARD 2 (HERO CENTER) -->
+            <div class="frosted-arc-card arc-card-center">
+              <div class="arc-card-rank">Rank 1 Batter</div>
+              <div class="arc-card-name">Harvik Desai</div>
+              <div class="arc-card-sub">Age: 25 · Saurashtra · WK-Batter</div>
+              <div class="arc-metric-val">323 Runs · 152.4 SMAT SR</div>
+              <div class="arc-card-note">0.12 byes/inn with 9 dismissals; gap manipulation converts 1s into 2s across expansive Jaipur boundaries.</div>
+            </div>
+
+            <!-- ARC CARD 3 -->
+            <div class="frosted-arc-card arc-card-right">
+              <div class="arc-card-rank">Rank 2 Bowler</div>
+              <div class="arc-card-name">Ramon Simmonds</div>
+              <div class="arc-card-sub">Age: 23 · West Indies · Death Seam</div>
+              <div class="arc-metric-val">4.00% Death Boundary (1 in 25)</div>
+              <div class="arc-card-note">Left-arm angle executes wide-line yorkers; conceded just one boundary across 25 high-pressure death deliveries.</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LOWER PROOF STRIP -->
+      <div class="social-proof-strip">
+        <div class="proof-item">
+          <span>Evaluated:</span>
+          <span class="proof-bold">80,498 Match Deliveries</span>
+        </div>
+        <div class="proof-item">
+          <span>Target Pool:</span>
+          <span class="proof-bold">20 Uncapped Prodigies</span>
+        </div>
+        <div class="proof-item">
+          <span>Youth Index:</span>
+          <span class="proof-bold">80% (Ages 19–25)</span>
+        </div>
+        <div class="proof-item">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="#ea1b65" style="margin-right: 2px;"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+          <span>Prepared for:</span>
+          <span class="proof-bold">Giles Lindsay & Kumar Sangakkara</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- DETAILED INTELLIGENCE MODULES -->
+    <div class="modules-container">
+
+      <!-- SECTION 1: TARGET BOARD -->
+      <section id="board" style="margin-bottom: 56px;">
+        <div class="section-intro">
+          <h2 class="section-title">The 20-Player Target Board</h2>
+          <p class="section-desc">Screened for contract availability, venue adaptation, and pressure execution.</p>
+        </div>
+
+        <div class="controls-bar">
+          <div class="filter-pills-row">
+            <button class="pill-filter-btn active" onclick="filterCategory('All')">All (20)</button>
+            <button class="pill-filter-btn" onclick="filterCategory('Batsman')">Top 10 Batters</button>
+            <button class="pill-filter-btn" onclick="filterCategory('Bowler')">Top 10 Bowlers</button>
+            <button class="pill-filter-btn" onclick="filterTier('Tier 1')">Tier 1 Core</button>
+            <button class="pill-filter-btn" onclick="filterTier('Tier 2')">Tier 2 Specialists</button>
+            <button class="pill-filter-btn" onclick="filterTier('Tier 3')">Tier 3 Depth</button>
+          </div>
+          <input type="text" id="searchInput" class="search-input-pill" placeholder="Search player, state, or role..." onkeyup="searchPlayers()">
+        </div>
+
+        <div class="board-grid" id="playerGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- SECTION 2: 11 RAZOR-THIN LOSSES -->
+      <section id="losses" style="margin-bottom: 56px;">
+        <div class="section-intro">
+          <h2 class="section-title">Diagnostic Audit: 11 Razor-Thin Losses</h2>
+          <p class="section-desc">Audited from 77 IPL delivery records. In 9 of these 11 games, RR held win expectancy &gt;65% at over 14 before death-phase collapse.</p>
+        </div>
+
+        <div class="table-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Match ID</th>
+                <th>Date</th>
+                <th>Opponent</th>
+                <th>Venue</th>
+                <th>Result & Margin</th>
+                <th>Tactical Bottleneck Diagnosed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>20188</strong></td>
+                <td>05/04/2023</td>
+                <td>Punjab Kings</td>
+                <td>Guwahati (Barsapara)</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 5 runs</span></td>
+                <td>Chasing 197; RR finished 192/7; missed victory by a single boundary hit in the 20th over.</td>
+              </tr>
+              <tr>
+                <td><strong>20206</strong></td>
+                <td>19/04/2023</td>
+                <td>Lucknow Super Giants</td>
+                <td>Jaipur (SMS)</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 10 runs</span></td>
+                <td>Chasing 154, stalled from 87/0; zero strike rotation against finger spin in overs 8–14.</td>
+              </tr>
+              <tr>
+                <td><strong>20212</strong></td>
+                <td>23/04/2023</td>
+                <td>Royal Challengers Bengaluru</td>
+                <td>Bengaluru</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 7 runs</span></td>
+                <td>RR 182/6 chasing 189; failed to score 20 off final 6 balls against hard lengths.</td>
+              </tr>
+              <tr>
+                <td><strong>20222</strong></td>
+                <td>30/04/2023</td>
+                <td>Mumbai Indians</td>
+                <td>Wankhede</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 6 wickets</span></td>
+                <td>Defending 212; leaked 3 consecutive sixes in the 20th over to lose with 3 balls to spare.</td>
+              </tr>
+              <tr>
+                <td><strong>20232</strong></td>
+                <td>07/05/2023</td>
+                <td>Sunrisers Hyderabad</td>
+                <td>Jaipur (SMS)</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 4 wickets</span></td>
+                <td>Defending 214; last-ball no-ball converted to match-winning six by Abdul Samad.</td>
+              </tr>
+              <tr>
+                <td><strong>31242</strong></td>
+                <td>10/04/2024</td>
+                <td>Gujarat Titans</td>
+                <td>Jaipur (SMS)</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 3 wickets</span></td>
+                <td>Defending 196; conceded 42 off overs 18–20; Rashid Khan hit final-ball four.</td>
+              </tr>
+              <tr>
+                <td><strong>31268</strong></td>
+                <td>02/05/2024</td>
+                <td>Sunrisers Hyderabad</td>
+                <td>Hyderabad</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 1 run</span></td>
+                <td>Chasing 201; trapped LBW on the final ball needing 2 runs to win.</td>
+              </tr>
+              <tr>
+                <td><strong>40725</strong></td>
+                <td>16/04/2025</td>
+                <td>Delhi Capitals</td>
+                <td>Arun Jaitley</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Tied (Super Over)</span></td>
+                <td>Tied chasing 210; collapsed to just 6 runs in the Super Over.</td>
+              </tr>
+              <tr>
+                <td><strong>40729</strong></td>
+                <td>19/04/2025</td>
+                <td>Lucknow Super Giants</td>
+                <td>Jaipur (SMS)</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 2 runs</span></td>
+                <td>Defending 180; leaked 19 runs in the 19th over on large Jaipur boundaries.</td>
+              </tr>
+              <tr>
+                <td><strong>40746</strong></td>
+                <td>04/05/2025</td>
+                <td>Kolkata Knight Riders</td>
+                <td>Eden Gardens</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 1 run</span></td>
+                <td>Chasing 223; dot ball on the penultimate delivery sealed 1-run defeat.</td>
+              </tr>
+              <tr>
+                <td><strong>40760</strong></td>
+                <td>18/05/2025</td>
+                <td>Punjab Kings</td>
+                <td>Jaipur (SMS)</td>
+                <td><span style="color:var(--rr-pink); font-weight:700;">Lost by 10 runs</span></td>
+                <td>Failed to chase 185; consumed 18 dot balls during middle overs on abrasive clay.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 3: METHODOLOGY -->
+      <section id="methodology" style="margin-bottom: 56px;">
+        <div class="section-intro">
+          <h2 class="section-title">Methodology & Mathematical Formulation</h2>
+          <p class="section-desc">Dynamic leverage vector applied across 80,498 match deliveries.</p>
+        </div>
+
+        <div class="methodology-row">
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">1. Dynamic Pressure Weight</div>
+            <p>Every delivery is assigned a contextual weight (W_i in [1.00, 2.25]):</p>
+            <div class="code-formula">W_i = 1.00 + (c_phase * I_phase) + (c_rrr * I_rrr) + (c_wkt * I_wkt) + (c_margin * I_margin)</div>
+            <p>Neutral baseline default is W_i = 1.00 when no stress trigger is active (middle overs, normal run rate).</p>
+          </div>
+
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">2. Relative Clutch Index (RCI)</div>
+            <p>Evaluates execution under high pressure (W_i &ge; 1.40) relative to personal baselines:</p>
+            <div class="code-formula">RCI_Bat = SR_Press * [1 + (SR_Press - SR_Base)/SR_Base] * (1 - DotRate_Press) * (1 + BndRate_Press)</div>
+            <p>Eliminates flat-track inflation in low-leverage phases.</p>
+          </div>
+
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">3. Vignesh Puthur Scarcity Model</div>
+            <p>Replicating Season 1's winning discovery, candidate rankings apply an Asymmetric Scarcity Multiplier (A_p):</p>
+            <p>19–25 age runway (1.25x), left-arm 140+ pace (1.30x), mystery wrist-spin (1.25x), and 200+ death SR (1.30x).</p>
+          </div>
+
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">4. Screening Constraints</div>
+            <p>100% free agents verified against 2025/2026 IPL franchise rosters and Unstop mapping. 80% youth index (16 of 20 targets aged 19–25).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: SCREENING FACTORS -->
+      <section id="factors">
+        <div class="section-intro">
+          <h2 class="section-title">Key Analytical Screening Factors</h2>
+          <p class="section-desc">The four core empirical pillars applied across the entire candidate pool.</p>
+        </div>
+
+        <div class="methodology-row">
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">1. Contract Eligibility</div>
+            <p>100% free agents screened against official 2025/2026 IPL retained rosters and Unstop mapping ledger. Zero players contracted to other franchises; zero players belonging to Rajasthan Royals.</p>
+          </div>
+
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">2. Dual-Home Specialization</div>
+            <p><strong>SMS Jaipur (Dry Clay, 78m):</strong> Gap running and middle spin choke (Harvik Desai, Ricky Bhui, Matthew Humphreys, Prince Choudhary, J. Suchith).</p>
+            <p><strong>Barsapara Guwahati (Dew):</strong> 140+ hit-the-deck pace and left-arm wide yorkers (Aaqib Khan, Sonny Baker, Ramon Simmonds, Kamil Mishara).</p>
+          </div>
+
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">3. Age Bracket & Runway</div>
+            <p>16 of 20 targets (80%) are aged 19–25. Strategic exceptions justified: Ricky Bhui (28) provides mature domestic captaincy ballast (#1 SMAT six-hitter); Suyash Prabhudessai (26) offers elite fielding; Pramod Madushan (31) & J. Suchith (31) serve as veteran contingency insurance.</p>
+          </div>
+
+          <div class="methodology-tile">
+            <div class="methodology-tile-title">4. Hostile Away Tracks</div>
+            <p>Compact back-foot techniques playing late under eyes (Ricky Bhui, Suyash Prabhudessai); upright seam discipline extracting variable bounce without relying on flat pace (Vidhwath Kaverappa, Sonny Baker).</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>Rajasthan Royals — SupeRR Selector Season 2 Strategy & Analytics Submission</div>
+      <div>Prepared for: <strong>Giles Lindsay</strong> & <strong>Kumar Sangakkara</strong></div>
+    </footer>
+
+  </div>
+
+  <script>
+    const players = [{"id": 6488, "rank": 1, "name": "Harvik Desai", "category": "Batsman", "role": "Wicketkeeper-Batter", "age": 25, "team": "Saurashtra", "tier": "Tier 1", "pressure_sr": 152.36, "primary_metric": "323 runs in SMAT", "secondary_metric": "0.12 byes/inn (9 dismissals)", "ground_fit": "SMS Jaipur: Gap manipulation across 78m boundaries; 1s into 2s.", "scout_note": "Attacked R. Sai Kishore for 24 runs in 5 balls. Direct wicketkeeping backup to Dhruv Jurel."}, {"id": 7049, "rank": 2, "name": "Kamil Mishara", "category": "Batsman", "role": "Pure Top-Order Striker", "age": 23, "team": "Sri Lanka A", "tier": "Tier 1", "pressure_sr": 205.71, "primary_metric": "72 runs off 35 press balls", "secondary_metric": "28.57% boundary rate", "ground_fit": "Barsapara Guwahati: High wrist-cock lofts skiddy ball under heavy evening dew.", "scout_note": "Solves RR's #10 death boundary ranking (19.53%). High-velocity boundary hitter."}, {"id": 48551, "rank": 3, "name": "Aravelly Avanish", "category": "Batsman", "role": "Wicketkeeper-Finisher", "age": 19, "team": "Hyderabad / India U19", "tier": "Tier 2", "pressure_sr": 162.5, "primary_metric": "162.50 death SR in BCCI trials", "secondary_metric": "96.4% U19 WC catch rate", "ground_fit": "SMS Jaipur & Away: Left-hand muscle against finger spin; cleans up hard chances.", "scout_note": "India U19 WC Finalist. Early-buy developmental keeper to groom behind Jurel."}, {"id": 3651, "rank": 4, "name": "Ricky Bhui", "category": "Batsman", "role": "Middle-Order Power Hitter", "age": 28, "team": "Andhra", "tier": "Tier 1", "pressure_sr": 188.89, "primary_metric": "20 sixes in SMAT (#1)", "secondary_metric": "902 Ranji runs (75.16 avg)", "ground_fit": "SMS Jaipur & Two-Paced Decks: Hits high pace through line without slogging.", "scout_note": "Age 28 prime anchor exception. Provides mature domestic captaincy ballast to prevent collapses."}, {"id": 8652, "rank": 5, "name": "Mohammad Ishaq", "category": "Batsman", "role": "Wicketkeeper-Finisher", "age": 20, "team": "Afghanistan A", "tier": "Tier 2", "pressure_sr": 148.0, "primary_metric": "37 runs off 25 press balls", "secondary_metric": "0 dismissals under pressure", "ground_fit": "SMS Jaipur: Compact technique; handles dry surface deceleration.", "scout_note": "High-upside overseas developmental keeper."}, {"id": 8085, "rank": 6, "name": "Suyash Prabhudessai", "category": "Batsman", "role": "Finisher & Gun Outfielder", "age": 26, "team": "Goa", "tier": "Tier 2", "pressure_sr": 148.6, "primary_metric": "38.40 SMAT avg", "secondary_metric": "Saves 8-10 runs in field", "ground_fit": "SMS Jaipur: Rapid 2s across deep pockets; boundary suppression in 30-yard ring.", "scout_note": "Age 26 transition exception. Elite domestic athlete offering positional versatility at 6 or 7."}, {"id": 26854, "rank": 7, "name": "SM Meherob Hasan", "category": "Batsman", "role": "Batting All-Rounder", "age": 21, "team": "Bangladesh A", "tier": "Tier 2", "pressure_sr": 168.29, "primary_metric": "69 runs off 41 press balls", "secondary_metric": "7 sixes + off-spin utility", "ground_fit": "SMS Jaipur: Left-handed lower-order power; defensive off-spin on abrasive clay.", "scout_note": "Dual-threat all-rounder giving batting depth at #7 with secondary spin overs."}, {"id": 27962, "rank": 8, "name": "Saurav Chauhan", "category": "Batsman", "role": "Pure Top-Order Attacker", "age": 23, "team": "Gujarat", "tier": "Tier 3", "pressure_sr": 113.33, "primary_metric": "18-ball 61 in SMAT (338 SR)", "secondary_metric": "16 balls in senior log", "ground_fit": "Barsapara Guwahati: Aggressive powerplay intent hitting through the line.", "scout_note": "Domestic record-holder for fastest fifty. Fearless backup opener to Yashasvi Jaiswal."}, {"id": 7548, "rank": 9, "name": "Shivalik Sharma", "category": "Batsman", "role": "Middle-Order Left-Hand Batter", "age": 25, "team": "Baroda", "tier": "Tier 3", "pressure_sr": 141.5, "primary_metric": "141.50 SR vs spin in SMAT", "secondary_metric": "Tall lever boundary archetype", "ground_fit": "SMS Jaipur: Clears long midwicket boundary off spinners from the rough.", "scout_note": "Adds left-handed boundary muscle alongside Dhruv Jurel during middle overs."}, {"id": 8726, "rank": 10, "name": "Alishan Sharafu", "category": "Batsman", "role": "Pure Top/Middle Striker", "age": 22, "team": "UAE", "tier": "Tier 3", "pressure_sr": 156.14, "primary_metric": "89 runs off 57 press balls", "secondary_metric": "12 boundaries (21.05%)", "ground_fit": "Barsapara Guwahati: Skiddy hard-length puncher; swift outfielder.", "scout_note": "Associate prodigy capable of floating across batting positions 3 to 6."}, {"id": 8632, "rank": 1, "name": "Aaqib Khan", "category": "Bowler", "role": "Express Seam Spearhead", "age": 20, "team": "UP / India A", "tier": "Tier 1", "pressure_sr": 14.2, "primary_metric": "5.10 PP pressure economy", "secondary_metric": "60.0% PP dot ball rate", "ground_fit": "Barsapara Guwahati & SMS Jaipur: 142+ km/h hit-the-deck pace; dismisses top order.", "scout_note": "Dismissed Mayank Agarwal in Ranji Trophy. Matches marquee international quicks in early-over dot frequency."}, {"id": 8298, "rank": 2, "name": "Ramon Simmonds", "category": "Bowler", "role": "Left-Arm Death Seamer", "age": 23, "team": "West Indies", "tier": "Tier 1", "pressure_sr": 5.0, "primary_metric": "5.04 death economy (5 wkts)", "secondary_metric": "4.00% boundaries conceded (1 in 25)", "ground_fit": "Barsapara Guwahati: Wide-line yorkers; natural left-arm angle under wet dew.", "scout_note": "Halts RR's 9.66 death bleeding. Allowed only ONE boundary across 25 high-pressure balls."}, {"id": 22471, "rank": 3, "name": "Matthew Humphreys", "category": "Bowler", "role": "Slow Left-Arm Orthodox Spinner", "age": 22, "team": "Ireland", "tier": "Tier 2", "pressure_sr": 5.75, "primary_metric": "12 wickets in 69 press balls", "secondary_metric": "5.57 pressure economy", "ground_fit": "SMS Jaipur: Exploits dry clay to turn into right-handers; protects 78m boundaries.", "scout_note": "Supreme defensive spinner. Stifles middle overs at 5.57 RPO while taking regular wickets."}, {"id": 31227, "rank": 4, "name": "Vidhwath Kaverappa", "category": "Bowler", "role": "Upright Seam Spearhead", "age": 25, "team": "Karnataka", "tier": "Tier 1", "pressure_sr": 16.5, "primary_metric": "Premier domestic strike bowler", "secondary_metric": "54.20% dot ball rate", "ground_fit": "Hostile Away Decks (Ekana/Ahmedabad): Immaculate upright seam and steep bounce.", "scout_note": "Duleep Trophy MoM. High-discipline domestic spearhead suited for unresponsive pitches."}, {"id": 24473, "rank": 5, "name": "Sonny Baker", "category": "Bowler", "role": "145 km/h Express Quick", "age": 21, "team": "England", "tier": "Tier 2", "pressure_sr": 18.0, "primary_metric": "145+ km/h release speed", "secondary_metric": "11.11% boundaries conceded", "ground_fit": "Barsapara Guwahati: Heavy bouncers hurry batters through the air before dew settles.", "scout_note": "Raw velocity early buy. Bowling Impact Player weapon for night fixtures."}, {"id": 27959, "rank": 6, "name": "Hrithik Shokeen", "category": "Bowler", "role": "Off-Spin Bowling All-Rounder", "age": 24, "team": "Delhi / India A", "tier": "Tier 2", "pressure_sr": 21.0, "primary_metric": "6.40 SMAT economy (Delhi)", "secondary_metric": "100% Unsold / Free Agent", "ground_fit": "SMS Jaipur: Right-arm off-spin takes ball away from LHBs; adds lower batting punch.", "scout_note": "Unsold in IPL mega auction. Free domestic off-spin asset."}, {"id": 49665, "rank": 7, "name": "Prince Choudhary", "category": "Bowler", "role": "Pure Mystery Wrist-Spinner", "age": 21, "team": "Delhi", "tier": "Tier 3", "pressure_sr": 15.0, "primary_metric": "12 wkts at 6.15 ER (DDCA)", "secondary_metric": "Sharp disguised googly", "ground_fit": "SMS Jaipur: Turns both ways off abrasive red clay.", "scout_note": "Direct replication of Season 1 Vignesh Puthur archetype: unheralded mystery spin phenom."}, {"id": 27466, "rank": 8, "name": "Dhruv Parashar", "category": "Bowler", "role": "Off-Spin Bowling All-Rounder", "age": 19, "team": "UAE", "tier": "Tier 3", "pressure_sr": 28.0, "primary_metric": "5.57 pressure economy", "secondary_metric": "10.71% boundary conceded", "ground_fit": "SMS Jaipur: Darting trajectory into pads denies elevation.", "scout_note": "19-year-old rising off-spinner with defensive discipline under match pressure."}, {"id": 6932, "rank": 9, "name": "Pramod Madushan", "category": "Bowler", "role": "Death Yorker Specialist", "age": 31, "team": "Sri Lanka", "tier": "Tier 3", "pressure_sr": 6.25, "primary_metric": "4 wkts in 25 press balls (5.28 ER)", "secondary_metric": "4.00% boundaries conceded", "ground_fit": "Barsapara Guwahati: Reverse swing and low toe-crushers under wet ball conditions.", "scout_note": "Age 31 veteran insurance exception. Asia Cup final winner with proven death execution."}, {"id": 2852, "rank": 10, "name": "Jagadeesha Suchith", "category": "Bowler", "role": "Left-Arm Orthodox Spinner", "age": 31, "team": "Karnataka", "tier": "Tier 3", "pressure_sr": 38.0, "primary_metric": "2.53 middle pressure econ", "secondary_metric": "68.42% dots, 0 boundaries", "ground_fit": "SMS Jaipur: Supreme containment bowler on dry decks; strangles overs 7-11.", "scout_note": "Age 31 domestic veteran safety net. Zero boundary leakage."}];
+
+    let currentCategory = 'All';
+    let currentTier = 'All';
+
+    function renderPlayers(list) {
+      const grid = document.getElementById('playerGrid');
+      grid.innerHTML = '';
+
+      if (list.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--text-muted);">No players match the selected filters.</div>';
+        return;
+      }
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'player-card-refined';
+        
+        card.innerHTML = `
+          <div>
+            <div class="player-card-header">
+              <div>
+                <div class="card-role-badge">Rank #${p.rank} · ${p.category}</div>
+                <div class="card-name-title">${p.name}</div>
+                <div class="card-origin-meta">${p.role} · ID: ${p.id}</div>
+              </div>
+              <span class="tier-tag">${p.tier}</span>
+            </div>
+
+            <div class="card-stat-strip" style="margin: 14px 0;">
+              <div class="stat-col">
+                <span class="stat-lbl">${p.category === 'Batsman' ? 'Pressure SR' : 'Strike Rate'}</span>
+                <span class="stat-val" style="color: var(--rr-pink);">${p.pressure_sr}</span>
+              </div>
+              <div class="stat-col">
+                <span class="stat-lbl">Age / State</span>
+                <span class="stat-val">${p.age} Yrs · ${p.team.split('/')[0]}</span>
+              </div>
+              <div class="stat-col" style="grid-column: 1/-1; margin-top: 4px;">
+                <span class="stat-lbl">Verified Evidence</span>
+                <span class="stat-val" style="font-size: 11.5px; font-weight: 500; color: var(--text-body);">${p.primary_metric} (${p.secondary_metric})</span>
+              </div>
+            </div>
+
+            <div class="card-intel-block">
+              <div><strong>Ground Fit:</strong> ${p.ground_fit}</div>
+              <div><strong>Scout Note:</strong> ${p.scout_note}</div>
+            </div>
+          </div>
+
+          <div class="card-foot-id">
+            <span>Profile ID: ${p.id}</span>
+            <span style="font-weight: 700; color: var(--rr-navy);">${p.team}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function switchNav(element) {
+      document.querySelectorAll('.nav-pill-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      currentTier = 'All';
+      updateFilterButtons();
+      applyFilters();
+    }
+
+    function filterTier(tier) {
+      currentTier = tier;
+      currentCategory = 'All';
+      updateFilterButtons();
+      applyFilters();
+    }
+
+    function updateFilterButtons() {
+      document.querySelectorAll('.pill-filter-btn').forEach(btn => {
+        const text = btn.innerText;
+        if (currentCategory !== 'All' && text.includes(currentCategory)) {
+          btn.classList.add('active');
+        } else if (currentTier !== 'All' && text.includes(currentTier)) {
+          btn.classList.add('active');
+        } else if (currentCategory === 'All' && currentTier === 'All' && text.startsWith('All')) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    function searchPlayers() {
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      let filtered = players.filter(p => {
+        const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
+        const matchesTier = currentTier === 'All' || p.tier === currentTier;
+        const matchesSearch = !q || 
+          p.name.toLowerCase().includes(q) || 
+          p.id.toString().includes(q) || 
+          p.team.toLowerCase().includes(q) || 
+          p.role.toLowerCase().includes(q) ||
+          p.ground_fit.toLowerCase().includes(q);
+
+        return matchesCategory && matchesTier && matchesSearch;
+      });
+
+      renderPlayers(filtered);
+    }
+
+    // Initial render
+    renderPlayers(players);
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "superr-selector-rr-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rajasthan Royals IPL 2027 Auction Strategy & War-Room Dashboard - SupeRR Selector Season 2",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
